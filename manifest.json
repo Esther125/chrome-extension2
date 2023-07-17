@@ -1,0 +1,21 @@
+{
+    "name": "inject",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["inject.js","jquery-3.1.0.min.js","jquery.qrcode.min.js"]
+            
+        }
+    ],
+    "host_permissions": ["<all_urls>"],
+    "permissions":[
+        "storage",
+        "tabs",
+        "activeTab"
+      ],
+      "background": {
+        "service_worker": "background.js"
+      }
+}
